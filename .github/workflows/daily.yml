@@ -1,0 +1,52 @@
+name: Daily news refresh
+
+on:
+  schedule:
+    # 16:30 UTC = 香港時間 00:30
+    - cron: "30 16 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: frontier-news
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Collect headlines
+        run: python scripts/update_news.py
+
+      - name: Validate JSON
+        run: |
+          python - <<'PY'
+          import json
+          d = json.load(open("news.json", encoding="utf-8"))
+          assert isinstance(d.get("items"), list), "items must be a list"
+          for it in d["items"]:
+              assert it.get("title") and it.get("date") and it.get("url"), it
+          print(f"ok: {len(d['items'])} items")
+          PY
+
+      - name: Commit if changed
+        run: |
+          if git diff --quiet -- news.json; then
+            echo "No new headlines today."
+            exit 0
+          fi
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add news.json
+          git commit -m "chore: daily news refresh $(date -u +%Y-%m-%d)"
+          git push

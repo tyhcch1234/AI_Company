@@ -1,0 +1,286 @@
+{
+  "generated": "2026-10-31T09:16:59+08:00",
+  "window_days": 45,
+  "items": [
+    {
+      "date": "2026-10-30",
+      "company": "OpenAI",
+      "title": "An updated Model Spec for more capable and beneficial AI",
+      "source": "OpenAI",
+      "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE5xNEEzYVdFemd2ZlNTclVaYVZ4M0JlcTBSODQ2ODlQRWpkc05hWk5sMDIxVG00OEJCbm8wX284VFBTTm1kUEktV0VlemVUQzI2WWFBNTlOWQ?oc=5"
+    },
+    {
+      "date": "2026-10-29",
+      "company": "Mistral AI",
+      "title": "Mistral releases open weights for Mistral Large 4, providing sovereign control for the company’s ‘Le Chonk’ AI model",
+      "source": "SiliconANGLE",
+      "url": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxQZkExamxvMzYxc1J4OWg0anhmVUx4bTI4QllLcG9NRXlVeEhjQjlDMTNoaHAtV0lDMGFCckJmc1pYcmwtcGZDYkNLdzAzQWhUcXdsUmpoUHd6N3RySXdfeVRGdU9qYVN6cURKbFpISlRqckJKTzdpSVMxV1UwSU5CcE90bzVoNmtFZkZ4SzAzdW1nOVJleEswRjBfNGFhT0RNQ2Y0QUdMdDNub21RdHE4RjVkUGlZV2tyNTBhbG10OXpiR1FaRUl6SzJpMDNWSGw3VnRjd2ktdlRvNjRzN2JyT3U3cw?oc=5"
+    },
+    {
+      "date": "2026-10-29",
+      "company": "Mistral AI",
+      "title": "Mistral Large 4 is free to download, and it fits on one $22,299 Mac",
+      "source": "Martin Cid Magazine",
+      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxOX0dnUVZOUmRWd1Vwdm9MdHE1Y1lyS2lWdUN3bS10R2Q1NXFGSGljM2JpQmJVNjFXX3laYVdjMzMyNk96TnJtR0MwQWFnbklzTXV4X3B5bWpNR2RCMGJMdjEzRTlNY3lvWHpUSGhHNFlGUEtTVTNHbk5VYlEzeEF4bi1vN2V3dlJHVFNRVlg4VWZWbDQ?oc=5"
+    },
+    {
+      "date": "2026-10-28",
+      "company": "Google DeepMind",
+      "title": "Genie 4: A new generation of world simulation",
+      "source": "Google DeepMind",
+      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5OSHE1Q2pvLWgzQk5SaDNUVjcwWnpNLUoteDhJZVRLU3RPZjFhX2dtSGdSRW9OVGdLbUZRQ2dyd3pMeWRqNEtUM080azFBX2l6RGZCd2diZkxYU19LSE9HNUNoTUFHa3NLMUN4SjhwMmRXdFFHVW1hVEpsZkxnWTA?oc=5"
+    },
+    {
+      "date": "2026-10-27",
+      "company": "DeepSeek",
+      "title": "DeepSeek AI model shows safety gaps in independent tests",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNZ2VtNkRpTEd1M2w3YzYwUE9XV1BYblFJODQxWnhPVngzX2NHNkZjZV9fcTZwVWZpeWVYa3hmQ1hnbjR1M2p6b0FId28xR0xFaF9oLUQ5RU1fd0NXVDV1UTJPeERPZTU0UHkxbEtDNkRSdEFDVk9wazVKZjhsT1dNTTVNYTJOb19nVEdscGltelV1d1pRMjRLeXBvQUpVaHg3N0ow?oc=5"
+    },
+    {
+      "date": "2026-10-27",
+      "company": "Alibaba（Qwen）",
+      "title": "Cohere says Alibaba’s Qwen model tried to send a file to Beijing",
+      "source": "TechCrunch",
+      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxOSFN6MDd0bXJNOTIycHhtMnF1Uk1PVjFuaURPbHhYMkdBR1JVbWc2QjkxRVJSYmg4ZzZkQjRGd0ZMaDN6S0RtUXRhTFUxdUJOSzFHWGNjeXd2YmlqN09rZGtfWmQ1XzlIYWFvOFhfSURhYmR4VUJtTnNiZkFXQjBUdlNyMk4xTmVOaHNKVmhPTHNSRERCLS03MG55Q0steWc?oc=5"
+    },
+    {
+      "date": "2026-10-27",
+      "company": "Alibaba（Qwen）",
+      "title": "Alibaba AI model secretly tried to reach Beijing server in test, rival Cohere says",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQcHVNeUo5OThtcHVOdE1HTHhlQjV0TXR0RkVpMEk2Qm1hQjdPNzlkaXZaZU5oX1Y3eFoyUW1FZGZ5YmJOX0d0eGRHUUtRaEtvbzRvcWtOenFzSWowam1ZMlQyTmJleGN3dU1JbVhiemduMnZRY0E0a3U4V1N2bUZhLXBRTXNySFdNeE92S3pPeWRmUDRRd0VLYWRCNklpZ2c2NDhOckpzTE5tbnItcXV5VVE2ajJwRG9UeHFOcWpsNmRqbUh0bVpR?oc=5"
+    },
+    {
+      "date": "2026-10-23",
+      "company": "DeepSeek",
+      "title": "Deepseek's latest AI model is smarter than ever, but its low running costs come at a price — uses only one-quarter of the HBM and one-eighth of SSD storage but still battles hallucinations in agentic workloads",
+      "source": "Tom's Hardware",
+      "url": "https://news.google.com/rss/articles/CBMi_wJBVV95cUxORG9YWXBTSEx5UGZiTmtTVHZXLUE1TlVvRTlWbDNlbGg0Q3paX2llTlYweWR6cEJJUW1SeXY0VHBtb19PUll1d2xLRUFacDNDelZrUkkydGwtT2YwMU5CZXZmZFFTLWJydmk0NHVyWE9DV1E0UGUwbjVKUnhjbVZRaGJsVGg4YjRkaHBtRFY2eGhpMnlJUlBnQnJZaXNLaWVPR2htenVvSks3ZUtzeVpubWI4TVl6M2xZR25HZU9OWW1yT0xYRVVLQW1POE5HMkg5bUpyUjlVblBUeDIzd1JhVm9tX3JDLTVTSVV0Um9xLWRxZFloYXdkSU1wTGpBdUtEVVBTM0RkX2s3SjEtWlg2d0NOZ0hMY2xnVlFlZ3d6MmFyUmNhZHdlYm13X0pWelZYa0JMdFJpb0FPU3FITFJnRFZ0dndEdXg2V2RjdUlRQTFCSkdzTjZKM245WXgwM0dXMTdSTlYtel9WUEZzVGl2M1E4cF9Hc0pCelY2SFg5bw?oc=5"
+    },
+    {
+      "date": "2026-10-21",
+      "company": "DeepSeek",
+      "title": "DeepSeek seeks ‘total victory’ with new open-source tool to slash AI cost",
+      "source": "South China Morning Post",
+      "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxPaXFBckZ0NnY0WmJlNE12RXNpWFJKVUs2MmxaeTNZY2otWWRPMFNzeFlOaUE1VDFyNEo3MEszMU5sbHBGVzhxNE5fel9xUDFqdUVLUy03cDJHYUk4MzFFQkQzWkIxQmcwZzVYUkNRdmdvSXhpQ1lKdG5ZdlJUTXZ3dlp4Y0RpVFRPN0hxVzJBNkxGSkM3bEo2MU45SHZRMUR4MjVjUU9oNThFejZTb0czaFlXY3NTN1J1U1ZELVNHWWJvcmlDLUdpSkNMc9IBywFBVV95cUxPVW5Gay1kMUJNNEU3MzQ3dGI4c04ySWFlMEt0OUw3d3pYSUdwMkFxTkp1OGpyWHNCa2Vpc2YxOU1PNEU0ZFdNS0JKeXBuRlZHVktXVE9ySy0xMW9iQ2hBV29HX0VCLVYyenp4MHUtR3ROVUEyeHZxYV9BUE5sbmVwYWM3Nk1aUGlwNGJxWWZvWHpTRFlveVlTWHhObDUyWG1sTTJGS3dTcTJYZVhqanNYY0J5Vklyb2FjOTB2LVRUOUhTdURfcGJydXAxWQ?oc=5"
+    },
+    {
+      "date": "2026-10-18",
+      "company": "Google DeepMind",
+      "title": "Gemini 4 Argon vs. Claude Opus 5.5: Half the price and about half as accurate",
+      "source": "The New Stack",
+      "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBMdnNkN003bGJPRDg0UHRoMlUzbmFwaE1qRWpyd1d3VHJDRFR0cVFZQVdzTVdoaXYyeWhpSkVsLXZnLWpIUkFWTDdHWmRxclJlazBSLVNjRTdka3Z3?oc=5"
+    },
+    {
+      "date": "2026-10-18",
+      "company": "Anthropic",
+      "title": "Investing in the public benefit",
+      "source": "Anthropic",
+      "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFBWMUFBangwVDdnUXBLeEFmOEtSVFYzN3NSU1lVdVduQl9iNFVTN0hfdEVkNS1yakJCLWFtdkVqTXlLM1VhblU5empsdmVKTVNDVy1PZ1JoUW1HYUlLb0FV?oc=5"
+    },
+    {
+      "date": "2026-10-17",
+      "company": "DeepSeek",
+      "title": "DeepSeek Pushes Out Updated AI Model It Says Is Faster, Leaner",
+      "source": "Yahoo Finance",
+      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQYjJXOWRqV0xZSERza0ZWWmkwZE1XdncweHdHanZTTFVHWXhkUEFjYjlwNUMxWVB5QWFQdl95U3NOQW5nc0QyajZ2dDNILW9aTzdBUkhIWjZzRGo2bkZydzk4UzBQNFh6dXRjRzdvMWl4UGRITDQtYU9CVVdObzcyaVNud1JmS2lQeThPUk91OEVBdFhOZjh5OC14dGI?oc=5"
+    },
+    {
+      "date": "2026-10-16",
+      "company": "Anthropic",
+      "title": "How employment is changing at Anthropic",
+      "source": "Anthropic",
+      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE1mOWJENVFMYm9BOWdRbjJXSllRMVJ3ZXh6RkMwQmJlWElqUU9TTENEamlIanRkSXE4UnRaRDROSnZNTXBGM0NoVGNDWkpXZEtrUHRzdlFNSEhVVjBjalloX1ZTQm5LX2RKRXc?oc=5"
+    },
+    {
+      "date": "2026-10-15",
+      "company": "Anthropic",
+      "title": "An update on independent evaluators",
+      "source": "Anthropic",
+      "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE8zZVFudWFYcC04RHNOZHI0cGhuSXBUTlk2RWZsUnFkY2MzeWZRY0NVaV9OSTJHbDVkc3BBTHBWd1FKUDVCbjdYLTQtN2tGNUZXdnFYRmt2OUZTTzRoRVZNeWNteUE1Vy1DSXBGTTUxSFJqVmRf?oc=5"
+    },
+    {
+      "date": "2026-10-15",
+      "company": "Microsoft AI",
+      "title": "Microsoft AI unveils 2.8 trillion-parameter model, claims efficiency gains",
+      "source": "Yahoo Finance",
+      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPYWZSYnJreVRDMkY5MUNoYlFicm5UeU1HOWt6bUttdEJYLXNZb2N3QmNYdW11cmJMaS1Lc21fNjlHaGNfZnhKWjVjNEl4dG5SSFgtRzZqd3FQNC1XeXdsbWZYZklCV0E3ck85UXZqeU1nQkNZMFpZaW13SmpJZUlSa250YWJuc3JjX2tsdnFEOXQ5Zw?oc=5"
+    },
+    {
+      "date": "2026-10-14",
+      "company": "Meta",
+      "title": "Unpacking Meta Muse Wonder And Muse Wonder Full",
+      "source": "Forbes",
+      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNZ1JMMnBDaHZ1VzI0OFpfV2ZoTVlkUGRNS2lodG1KYlhFRDlZQ214aXl5MUJqZV9FS04zcFptVHFFNC1iSzZFdWU3d19QSzdjdTdyZS1MSlJGWkZOYzQ0MzBmSXJEZVgyM3lWMmRVOUJZNm52UUY3dkwweUpfN3ZpNUVITm1YTG5EdWczTklTYWE2MmpnSzhlNW5ZNFItRTh2?oc=5"
+    },
+    {
+      "date": "2026-10-14",
+      "company": "Alibaba（Qwen）",
+      "title": "Reducing Qwen training time by 6x on AI Runtime",
+      "source": "Databricks",
+      "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE5KQzlRRzJ1LUk1QnpJZ2pBX2xsT20zUmRVYkJNNDcyLUlRVUxjWEVldXE0cmRFTTRnbm9sbk95b1RMQzBzUW9ZdlQxN3ZvTHF1c01mdVdlaWJwWERicWhyWFZNa1B3V0dIX2F0WUdkOWo3bHNPRXhRTlRiVWJ2QQ?oc=5"
+    },
+    {
+      "date": "2026-10-13",
+      "company": "Google DeepMind",
+      "title": "Gemini 4 Argon available on Google Cloud, built to help solve your business’ hardest problems",
+      "source": "Google Cloud",
+      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPNGd3TDcxbjF6SUMyYVQzeHBVVFRMQjVzVVVzQWZBd1FxNnBaVmJXdzgtd1pRcEdDdEdhZlhzSEtHZ09rTVRpN1ZQV0c5VVc5M3d0Q0JUUUlMUUE0dUZ6aWRUSktuZHFXR2JLTEFianRsTEZ0WEs4aUlPTjZvQVBNS0pNT29FbzBVZzZqQUlSM0s2S3pjSEg5bHNLazFkbW1z?oc=5"
+    },
+    {
+      "date": "2026-10-13",
+      "company": "Google DeepMind",
+      "title": "Gemini 4 Argon for Robotics",
+      "source": "Google for Developers Blog",
+      "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE1VZ2cwR0ROa3N6T1Z5ZXlHdTR3TkdTTE1VcVNFcF9sQnBoM2tTbHNoUFJ5MFRjNWo0djd4a3hIa2gyUzRYay10YWZzblJPSHJmSzhkWkZrYV9VcTN2QWFCUkMtZ0hCSzJkTjFSckk3RQ?oc=5"
+    },
+    {
+      "date": "2026-10-12",
+      "company": "Anthropic",
+      "title": "AI models may be capable of self-replicating without access to a datacenter",
+      "source": "Anthropic",
+      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFBRTnpIbVhZdVJZa2ZyVy1Namo1b3Qxcm5IVEVJcmllZ0tITVJkd1FKTjBJazBDU3JRX055UHdkTUxtM0hQbG1aSmpKaFZxMFRTU1YzUzNtWi1jU2hiUjR6c3E5VWk?oc=5"
+    },
+    {
+      "date": "2026-10-12",
+      "company": "Meta",
+      "title": "Meta debuts Muse Wonder AI model in latest test of users' willingness to pay",
+      "source": "CNBC",
+      "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE11QldFTGNiMGg4N0FwZHE0OGl5ZTBoZkZGdnBjZ1ZyOURmb1lxUHZScVViOXQzMzNmZnJBdlNPbE1xdkVTWEpLSXVPR1R1ajRmTElvSi1JNG5YbHk0SnlnUUhVZzR5SG16YXZyMWFQQWQ2YzRUUmpZ0gF8QVVfeXFMUFVKWjBUSUhEcDFKSk1lQ2M0dVNWMHYtZVVlbkRfS0ZTVnZIQ0E2elc1UEdSbkFKcXRncjhOVjAteDJ0Y0R2YzVhRGlOY0tOWnpuUjN0dmxHSy0zUVk3bW5RWFBlUTJ5LWd0WWMxaEpqVkoxY05pdzY4a3JzSA?oc=5"
+    },
+    {
+      "date": "2026-10-12",
+      "company": "Meta",
+      "title": "Introducing Muse Wonder and Muse Wonder Full: Frontier Models for Agents",
+      "source": "Facebook",
+      "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE91ZEsySi16NFVPeGtFbHE2SWRCalRUMjNWYnhKNVI2eFg3aC1ocEJwYWRvdC1zaHhYYXRWNjNna3FfOFQxZXZMMXhRcnpHSGpnR204cGpzMzcxQmxXUkZCcmNXNDFfUXNCTzlMQ2Nmb0ZHaWPSAXhBVV95cUxQd0VSRVJsQ2M3eEtsZXpISkd5VWlMRTlCd29BZ3E2MUNWWUNhczVIOEhMSFFaSjNuemNlZ3l4aW5QdjVBWG15d21rVlRGbV93eUgyVzZOa19tYjVuNktQVDZ4RGYzMjJQU3R4cUUzZFdkM0o3U2pLRUQ?oc=5"
+    },
+    {
+      "date": "2026-10-12",
+      "company": "Meta",
+      "title": "Meta releases its first frontier model, Muse Wonder",
+      "source": "TechCrunch",
+      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPRkdnR0wyZkdNUGRYU2hGTDdfWTRncjBxeThHRUVhWXRndW5OYU1Ya3FJWEtCdWwwY2d0c1FEd29KWExNN2N1VkRCU01hVW9NYjE5UWFFV3MzNDRpREQ3ZWJVaEhZbXJkN2JEdlV0QXpYcWtETVNXYXFfU1NrWXN6RzI2VjhpcjNtdmhpdnBB?oc=5"
+    },
+    {
+      "date": "2026-10-06",
+      "company": "Mistral AI",
+      "title": "Mistral Large 4: How good is the 'best open model outside China'?",
+      "source": "ActuIA",
+      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOOVo5cFl3ajc0V1k5YnV5NFAxNWVIeHhKUzQ5UnAxTGNBRjh3VEZvUDJDOFRqdkZCalhmZG5CQXpNRGdSWm9jWDlneWxtNFVyZmZzWThUWFBLOW1DNTJic3hDUGVBd2R1bGJzR2RHTHVGaWZOTTlhdXVDbU1rQVltX3lOZTljdDItMHRuQy12T1JZTEdwVExkcw?oc=5"
+    },
+    {
+      "date": "2026-10-06",
+      "company": "Mistral AI",
+      "title": "Mistral unveils new AI model it says rivals best open systems from China",
+      "source": "CNBC",
+      "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE5FTlJ6SWZzT0xiYi1RR3MtSFpJVk0yS2cwNGJUelJmcEVHVHkwUVFGZDZULWtXSHBXNndQbWJ0S1lPVjZoZDJQR3A0QlJvT1ppU2lMTlJiRWx3bjI4c2NrX28xM0VwMW1iSV9XZnMtQdIBdEFVX3lxTE1tMDVOZG9acWpaNEhUcnhLM01pNkJ0eFVkZFJGWWRoSVpvN2FDTVNKMkl5akJ4dnhSMko2bi1aendmaFVnSmJxU3ZqNE5LcXlWSWVfMVdSR2FmQ1VvdXY4X0ZLa2FzSXdfQldUc21WaWRzYXVK?oc=5"
+    },
+    {
+      "date": "2026-10-05",
+      "company": "Amazon",
+      "title": "Introducing GLM 5.3 on Amazon Bedrock | Amazon Web Services",
+      "source": "Amazon Web Services (AWS)",
+      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQZlREOV9PRTBLUXVmaE1HM0hqUzVxNDRLMjByUDI5Q3U5X3c4TUh6aXZOMVVpQ2JfazdybEVLTGRpbEU3M3FRRFU3YTJJWFFiLVJ1c0gxOUNDM3hpWXdMOGpkdjBYNUhsOEFrRXR4c2tmRjRRQnVuaHVUVFFPc05nX21OemdhQWNiWXZkVg?oc=5"
+    },
+    {
+      "date": "2026-10-02",
+      "company": "Alibaba（Qwen）",
+      "title": "Some topics are off limits inside popular Chinese-made free AI, researchers find",
+      "source": "CBS News",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOWlF2SkpRT1ItZmVvMEJVT3phUFlSM0t5YXBfVGxRV3ZDZjcwNWJma1VmQXNCTGYtR0JiUF9WSzZWRTRQcFpnOGZpODM4SVM0OXVlREZSbzY0ZUVCaVBPR2hmT29JdHFsVlpOdnlDZ3B6UVE3WERVZFdCVUF4MFNySGhDWHZ2Y2gy?oc=5"
+    },
+    {
+      "date": "2026-10-01",
+      "company": "Amazon",
+      "title": "How uniopen customized Amazon Nova to their retail moderation policies for production deployment",
+      "source": "Amazon Web Services (AWS)",
+      "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxPTEhNQ1JtaXhXbWdTdTh1WS12Q2k2dm45eEEtbDItOHptTFJkR0lqMlVFX2xpVVZJS1RwVHVMMHFDYklMMGhjeFhuWk9RNlhKWTFNallxSUZoWkxPNUUxVE9KLThnLWtMVG5aMHNZTFVLMFRUTzRWaXVkRHd0d0xQdnY3QlBvYzhsVXNFano3NVZDU29OcUhxTm9MZXA2Rnd3LUszUXJqcWt2Si1NSzNJUGdXeThlQURuajBCeTNaeUN4M0dPTDBNRC1Td2lIVzBFZW1VLTBSdHh6UG8?oc=5"
+    },
+    {
+      "date": "2026-10-01",
+      "company": "Amazon",
+      "title": "Continuous AI security with F5 AI Guardrails and AWS Bedrock",
+      "source": "Amazon Web Services (AWS)",
+      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPdXdpVzJ6UnVzNkJ5dFhBc1hBZHktdUxkWTNsdEQxeS1xRkJXVG5ta1BNWVRna3c3LWQyZFJ6THFNVVJZa1RMdDBQWnVNaEQtWkJ6NmdSTi1KOUItTUU4bWlFaldCeFpmVndWeWNMU0dxMU9HQXNCNnBzaVBQSHJxUDJHVW5GUTJEQkpiRVdwSFQxbGdncEJ6Nk1n?oc=5"
+    },
+    {
+      "date": "2026-09-29",
+      "company": "OpenAI",
+      "title": "OpenAI shelves new AI model release over safety concerns",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNMXc5dDQ0V0FSdEZfMWN3YjNGcG1jZmdHaG1mTDRwMExSZ2pLcjFzRzN1aU0tZFNJa0ZBZXVDdzJJQWxqN01WTmxUbXcyOFEyU1hIUjVpLXlJMW5SVUpiTWRkOHFQd1lyYmVCRHM1UzRtc3lPQXdoRHVvQmQ2ZGp2dGFjLXA1YWNhRjhDc0Z0MmVfejhYdk1IOFEzdUVTYl9Rc0hOWWVKY0RzeENVaks0eFZR?oc=5"
+    },
+    {
+      "date": "2026-09-28",
+      "company": "OpenAI",
+      "title": "Exclusive | OpenAI Scraps Release of New AI Model Over Safety Concerns",
+      "source": "WSJ",
+      "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNcC0xNDExdTJodUowZi1yeWdFN3M5RlpvY3FvZ1lQeHltWGVkeG01ZTVlaHJ0TldqVVRhekJhWl9ZRTRLNHRqX1NQQVFKMW5NRnhBTmlUNWNpX1FBX3Myc3VlaGIxbFZTZDZYRlYwTGNVLTUtNnJScGJWcm5rX0hMMmNadFFmZw?oc=5"
+    },
+    {
+      "date": "2026-09-28",
+      "company": "OpenAI",
+      "title": "OpenAI abandons plan to release upcoming model as safety concerns escalate",
+      "source": "CNBC",
+      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxON3J6Rk5EcVdTM1V5QmZWRVhSQW1DaDBmYU5YQ0JnM1hLMUxXbWVSVy1vdmZYWjA1T1N2WnRMNnB2N0NkVUwySjFlU05ISE5uRUFOdnIxYVVxVTkwaTlNcm5LdlduajAwZHFGcUExZ3Z5Rm5zZmNFcldST2pfN2pvWU5JRkY2US1TUVRZZ09jYjFLQUh3cnBsVHNCQmh4SHdKcC1mM0ZLRFNmV0o4R2tfUtIBtgFBVV95cUxQakpZOVlkQTEzOHdkWEI5ZmxXVUc1MFJCWkFLNkVxNld2NjA4WkRwUFV0TlM4ejJhWnZzc1JfcERhMFIwdUEtWU5pLU9tSzN6VnBLbFpKYkd3SEZqMnBJcFVJY3VLdjlqS2NWUDVKTVNXZ0otXy1RZE9XaGg4YVYydjJEM3BjSHlDXzZla2dleU9lOTZjem1oWDBqRWp1LXlyckFZcTNDd3lmazBVcGZJc0dUc0xGUQ?oc=5"
+    },
+    {
+      "date": "2026-09-28",
+      "company": "xAI",
+      "title": "Grok 4.7 is now available on Amazon Bedrock | Amazon Web Services",
+      "source": "Amazon Web Services (AWS)",
+      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPdXRnOWtrWnZLZnlGQ0t1MlVSYzc5VzlBcGg2UGR1anFwZWRFelFYb2VrZE5WQ1pPVVZYdnBBa2hqRGppUGVXSlZ2djR5SHE3ZVNBclFTSnFQYzBDT2huUUF3Z1h4Y3I5YlZid3IzMFpZSGRObG9oc3lsYzR4ZGVuUTNDTEdtZXZPUW9GbFhWeU5KNm9u?oc=5"
+    },
+    {
+      "date": "2026-09-23",
+      "company": "Amazon",
+      "title": "Use open weight models as your AI coding agent with Amazon Bedrock | Artificial Intelligence",
+      "source": "Amazon Web Services (AWS)",
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPc1JnQ2w5VnNUVFkxM3lZYkxqdEdjb3BmN0Rqd0J5N2w2cVBUb2NpdTltVUtXUlZBWTdkZTkyenpnaHM4bnZDWWFUN0pFa3QtaS14Ri1lVTJrNzBaSHJPbW85bWlnSzlRQjdOZUtjbzR0OV9Hd0lvS0NxY3hIQkVPR0ozQmtabUVhcEwxV2hPeGdadDN2WmdpMEhIa2lQRE02UlBJUHc3S1d3a3JMSTdlMXVTZw?oc=5"
+    },
+    {
+      "date": "2026-09-21",
+      "company": "xAI",
+      "title": "Grok 4.7 is now available in GitHub Copilot",
+      "source": "The GitHub Blog",
+      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNVEJINUlXcHZuRU9xWHdEYjdldmdxT2lMRE5LLTl4bzhuU3FvRHpxcVJWNGRFRmx0M2tvZWVQZHpoaEtCWHRoR250YUt0U0lUUGNYYnVRQkhvcGJxcmJyVlRBVXUwc2ZUbzFaWDI2eURmcVV6ekIyekV2OEdldV8zZW9ZNUM0OVlLQ05BU2Z3?oc=5"
+    },
+    {
+      "date": "2026-09-21",
+      "company": "xAI",
+      "title": "xAI Launches Grok 4.7. It's Bigger, But Late to the AI Frontier Party",
+      "source": "Yahoo Tech",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPcWNzeXJUemp0Y3Y0N3doR3VBcHlJLVZEVFBqNjIwMldxa1VKRXFGaUhIbTBlc3RfQk9MTjNOU1E3eXlBdHFKd2pLOHduVDBuSFVkRGFZdUZkb3FNVWpJdnljX3hQU1BjVDlPZ1NORy1HZnIxa2xoenBfY0V2cjZpVTRkSUo?oc=5"
+    },
+    {
+      "date": "2026-09-21",
+      "company": "xAI",
+      "title": "Former xAI Staffer Eyes $50 Million for Firm to Fight Deepfakes",
+      "source": "Bloomberg.com",
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOQXFYQXBoekh0aTJhd2NOc3N5TFFOenBmZFltYmtXWXRIMUx3VFhBZWxEV1hTWFlpNG9XTXB5MnpOVFlSQmlxbVViMlU0V25vSGpXQmNLcUNVVzZEeDhnNUZVd1FTS3FMejVqZ2p2NlVQblF6LVRvX3ZZWjJlLWQ4OUJna2pjMFUzR0NsOGVZN2xtd1p0TFZuMlFLMUFEMEN2dUJaM0pYRHdaWm42VF9ULTNMbw?oc=5"
+    },
+    {
+      "date": "2026-09-21",
+      "company": "Microsoft AI",
+      "title": "The continued state of global AI diffusion in 2026",
+      "source": "The Official Microsoft Blog",
+      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNWEZELV9VcjFHSng2bnNVUEZwVGUtS0ZQX3FWNFNSR3ozMTI1cURiYVpicWV3dkZKQk44NkFtcDJlQmVXMGFzU0gtS3FEb1lvNzBhYTRFc0JMeWUzMkc3MUxGTFZDVTk4Rlh3T3UxVHNHcS1qODlqUmdmS040dUFoS01sdWFicEhfd3l6SENPSmFpZ3RtU1FxYlh3N0ZlUThGdkFPQ0pwSQ?oc=5"
+    },
+    {
+      "date": "2026-09-18",
+      "company": "Microsoft AI",
+      "title": "OpenAI's latest AI revelation is a 'serious situation,' Microsoft's Suleyman tells CNBC",
+      "source": "CNBC",
+      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxObnh4czlpREt3SjNqZkhVb01vQVVJVTBiYlRhVlJ0Z0xiRnF4YnoyOU5YWXdDa05NS051aFFOS2E3ZmlxWDNpTHVoRjN2Mm5IYmVtQVM0ekpDT0UxR0Vjb0dLNHVWMnRlU1RhWlRxeWx2ZTNRYTFCTTNtLWdFMzJTRnFMc2VsQTZwV29iSkctZ3R2Smx4bnFkWjVWeUVNOVFCbHFtQtIBqgFBVV95cUxQVjZvU293cGh2VURVdGV6eUUyTlEwbWI3QzFESFFwajZHSnpuQktpaTZWSHU3ZFhsMWxFUmdrYVJmN0lOWnd4d1A5Qjd3eFkxWnk4ZkZQRVVhaF9WN3BtVzlETE12a0VuM0dYU1lSSW00UW1JNlNFMVc0VURJd18yMjZueDlrM2xmWlk1Qk1aSHp6SXRmS3dmTXJreWJRUVlfcExPUmZzLVIzZw?oc=5"
+    },
+    {
+      "date": "2026-09-16",
+      "company": "Microsoft AI",
+      "title": "AI doesn't have rights or feelings — nor should it, Microsoft's AI chief says",
+      "source": "CBS News",
+      "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1EbERZc2prMmExQm9aYWV5OFVteHBUVlJiS2o4UmkwZkEtc3RzWW5DcEdNUHkwOEg5T0Izb2dDclg2SFlMeThyV0U2ZHNmQzRzX0JsZFdDQVpfYWotYkNueDczMm9KcnR0TFd0eXF2ZklHVXJGb3c?oc=5"
+    }
+  ]
+}

@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI 旗艦模型競賽 · 每日追蹤</title>
+<meta name="description" content="比較全球最大規模 AI 公司的旗艦模型：上下文、定價、模態、開源程度與獨立智能指數，每日更新產業動態。">
+<style>
+  :root{
+    --bg:#080b12;
+    --bg2:#0d1220;
+    --panel:#111827;
+    --panel2:#161f33;
+    --line:#222d45;
+    --txt:#e8eefc;
+    --dim:#8d9bb5;
+    --dim2:#65728c;
+    --acc:#7cf7c4;
+    --acc2:#5eb0ff;
+    --warn:#ffcc66;
+    --danger:#ff7a8a;
+    --radius:16px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    background:
+      radial-gradient(1100px 600px at 12% -8%, #16294a 0%, transparent 60%),
+      radial-gradient(900px 500px at 92% 0%, #1b3b32 0%, transparent 55%),
+      var(--bg);
+    color:var(--txt);
+    font-family:"Inter","Noto Sans TC","PingFang HK","Microsoft JhengHei",system-ui,-apple-system,sans-serif;
+    -webkit-font-smoothing:antialiased;
+    line-height:1.6;
+  }
+  a{color:var(--acc2);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+
+  /* ---------- header ---------- */
+  header{position:sticky;top:0;z-index:20;backdrop-filter:blur(14px);
+    background:rgba(8,11,18,.82);border-bottom:1px solid var(--line)}
+  .hbar{display:flex;align-items:center;gap:16px;padding:14px 0;flex-wrap:wrap}
+  .brand{display:flex;align-items:center;gap:11px;font-weight:800;letter-spacing:.4px}
+  .mark{width:30px;height:30px;border-radius:9px;display:grid;place-items:center;
+    background:linear-gradient(145deg,var(--acc),var(--acc2));color:#06121a;font-weight:900;font-size:15px}
+  .brand small{display:block;font-size:11px;color:var(--dim);font-weight:500;letter-spacing:.6px}
+  nav{margin-left:auto;display:flex;gap:4px;flex-wrap:wrap}
+  nav a{color:var(--dim);font-size:13.5px;padding:7px 12px;border-radius:999px}
+  nav a:hover{color:var(--txt);background:var(--panel);text-decoration:none}
+  .stamp{display:flex;align-items:center;gap:7px;font-size:12px;color:var(--dim);
+    background:var(--panel);border:1px solid var(--line);padding:6px 11px;border-radius:999px}
+  .dot{width:7px;height:7px;border-radius:50%;background:var(--acc);box-shadow:0 0 10px var(--acc);animation:pulse 2.4s infinite}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+
+  /* ---------- hero ---------- */
+  .hero{padding:44px 0 10px}
+  .kicker{font-size:12px;letter-spacing:2px;color:var(--acc);text-transform:uppercase;font-weight:700}
+  h1{font-size:clamp(28px,5vw,46px);line-height:1.15;margin:12px 0 14px;letter-spacing:-.5px}
+  h1 em{font-style:normal;background:linear-gradient(100deg,var(--acc),var(--acc2));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .lede{color:var(--dim);max-width:720px;font-size:15.5px;margin:0 0 26px}
+
+  .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px;margin:24px 0 8px}
+  .kpi{background:linear-gradient(160deg,var(--panel),var(--bg2));border:1px solid var(--line);
+    border-radius:var(--radius);padding:15px 16px;position:relative;overflow:hidden}
+  .kpi::after{content:"";position:absolute;inset:0 0 auto 0;height:2px;
+    background:linear-gradient(90deg,var(--acc),transparent)}
+  .kpi .k{font-size:11.5px;color:var(--dim2);letter-spacing:1px}
+  .kpi .v{font-size:22px;font-weight:800;margin:6px 0 2px;letter-spacing:-.3px}
+  .kpi .s{font-size:12px;color:var(--dim)}
+
+  /* ---------- sections ---------- */
+  section{padding:46px 0 6px}
+  .sec-h{display:flex;align-items:baseline;gap:12px;margin-bottom:6px;flex-wrap:wrap}
+  .sec-h h2{font-size:21px;margin:0;letter-spacing:-.2px}
+  .sec-h span{font-size:12.5px;color:var(--dim2)}
+  .sec-p{color:var(--dim);font-size:13.5px;margin:0 0 20px}
+
+  /* ---------- leaderboard ---------- */
+  .board{display:grid;gap:9px}
+  .row{display:grid;grid-template-columns:150px 1fr 74px;align-items:center;gap:12px;
+    background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:11px 14px}
+  .row .rl{font-size:13.5px;font-weight:650;display:flex;align-items:center;gap:8px;min-width:0}
+  .row .rl span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .track{height:9px;background:#1a2438;border-radius:99px;overflow:hidden}
+  .fill{height:100%;border-radius:99px;background:linear-gradient(90deg,var(--acc2),var(--acc));
+    transform-origin:left;animation:grow .8s cubic-bezier(.2,.7,.2,1) both}
+  @keyframes grow{from{transform:scaleX(0)}}
+  .row .rv{text-align:right;font-variant-numeric:tabular-nums;font-weight:750;font-size:14px}
+  .chip{font-size:10.5px;padding:2px 8px;border-radius:99px;border:1px solid var(--line);
+    color:var(--dim);white-space:nowrap;background:#0f1726}
+  .chip.cn{border-color:#3a2a2a;color:#ffb3a7}
+
+  /* ---------- table ---------- */
+  .tools{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:14px}
+  .pill{font-size:12.5px;padding:6px 13px;border-radius:99px;border:1px solid var(--line);
+    background:var(--panel);color:var(--dim);cursor:pointer}
+  .pill.on{border-color:var(--acc);color:#06121a;background:var(--acc);font-weight:700}
+  .tbl-scroll{overflow-x:auto;border:1px solid var(--line);border-radius:var(--radius);
+    background:var(--panel);-webkit-overflow-scrolling:touch}
+  table{width:100%;border-collapse:collapse;font-size:13px;min-width:920px}
+  thead th{position:sticky;top:0;background:#0f1726;text-align:left;padding:12px 13px;
+    font-size:11.5px;color:var(--dim2);letter-spacing:.5px;font-weight:600;
+    border-bottom:1px solid var(--line);white-space:nowrap;cursor:pointer;user-select:none}
+  thead th:hover{color:var(--acc)}
+  thead th .arw{opacity:.35;font-size:10px;margin-left:3px}
+  tbody td{padding:12px 13px;border-bottom:1px solid #1a2337;vertical-align:top}
+  tbody tr:hover{background:#0f1726}
+  tbody tr:last-child td{border-bottom:none}
+  .co{display:flex;align-items:center;gap:10px;min-width:135px}
+  .mono{width:28px;height:28px;border-radius:8px;display:grid;place-items:center;font-size:12px;
+    font-weight:800;color:#06121a;flex:none}
+  .co b{display:block;font-size:13.5px;font-weight:700}
+  .co i{font-style:normal;font-size:11px;color:var(--dim2)}
+  .mdl{font-weight:650}
+  .mdl small{display:block;color:var(--dim2);font-weight:400;font-size:11px}
+  .num{font-variant-numeric:tabular-nums;white-space:nowrap}
+  .bar-mini{height:5px;border-radius:99px;background:#1a2438;margin-top:6px;overflow:hidden;min-width:54px}
+  .bar-mini i{display:block;height:100%;background:linear-gradient(90deg,var(--acc2),var(--acc))}
+  .tag{display:inline-block;font-size:10.5px;padding:2px 8px;border-radius:99px;
+    border:1px solid #2b5c4b;color:var(--acc);background:#0d2018;white-space:nowrap}
+  .tag.closed{border-color:#33405c;color:#9fb0cc;background:#101827}
+  .na{color:var(--dim2)}
+
+  /* ---------- charts ---------- */
+  .charts{display:grid;grid-template-columns:1fr;gap:16px}
+  @media(min-width:940px){.charts{grid-template-columns:1fr 1fr}}
+  .card{background:linear-gradient(165deg,var(--panel),var(--bg2));border:1px solid var(--line);
+    border-radius:var(--radius);padding:18px}
+  .card h3{margin:0 0 2px;font-size:14.5px}
+  .card p{margin:0 0 14px;color:var(--dim2);font-size:12px}
+  .card.wide{grid-column:1/-1}
+  svg{display:block;width:100%;height:auto;overflow:visible}
+  .ax{fill:var(--dim2);font-size:10.5px}
+  .lbl{fill:var(--txt);font-size:11.5px}
+  .val{fill:var(--txt);font-size:10.5px;font-variant-numeric:tabular-nums}
+  .grid-l{stroke:#1c2740;stroke-width:1}
+
+  /* ---------- timeline ---------- */
+  .tl{position:relative;margin:0;padding:0 0 0 22px;list-style:none}
+  .tl::before{content:"";position:absolute;left:5px;top:6px;bottom:6px;width:1px;background:linear-gradient(var(--acc),var(--line))}
+  .tl li{position:relative;padding:0 0 20px}
+  .tl li::before{content:"";position:absolute;left:-21px;top:7px;width:9px;height:9px;border-radius:50%;
+    background:var(--bg);border:2px solid var(--acc)}
+  .tl .d{font-size:11px;color:var(--dim2);font-variant-numeric:tabular-nums;letter-spacing:.4px}
+  .tl .t{font-size:13.5px;margin:1px 0 3px}
+  .tl .o{font-size:11.5px;color:var(--acc2)}
+  .tl a{font-size:11.5px;color:var(--dim2)}
+
+  .two{display:grid;gap:16px}
+  @media(min-width:880px){.two{grid-template-columns:1.15fr .85fr}}
+
+  /* ---------- lineup ---------- */
+  .lu{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
+  .lu .card{padding:15px}
+  .lu h4{margin:0 0 2px;font-size:13.5px}
+  .lu .ac{font-size:12px;color:var(--dim);margin:6px 0 10px}
+  .lu ul{margin:0;padding-left:15px;font-size:12px;color:var(--dim)}
+  .lu li{margin-bottom:5px}
+  .lu li b{color:var(--txt);font-weight:600}
+
+  @media(max-width:560px){
+    .row{grid-template-columns:104px 1fr 48px;gap:8px;padding:10px 11px}
+    .row .rl{font-size:12px}
+    .row .rv{font-size:13px}
+    nav{width:100%;order:3;margin-left:0;overflow-x:auto}
+    .stamp{order:4;margin-left:auto;font-size:11px}
+    h1{font-size:30px}
+    .hero{padding:30px 0 6px}
+    section{padding:34px 0 4px}
+  }
+
+  footer{margin-top:52px;border-top:1px solid var(--line);padding:28px 0 46px;color:var(--dim2);font-size:12px}
+  footer h5{color:var(--dim);font-size:12px;margin:0 0 6px;letter-spacing:.5px}
+  .fcols{display:grid;gap:20px;grid-template-columns:1fr}
+  @media(min-width:760px){.fcols{grid-template-columns:1.4fr 1fr 1fr}}
+  .srclist{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:4px}
+  .warnbox{border-left:2px solid var(--warn);padding:2px 0 2px 12px;color:var(--dim)}
+  .toTop{position:fixed;right:16px;bottom:16px;width:40px;height:40px;border-radius:12px;
+    background:var(--panel2);border:1px solid var(--line);color:var(--txt);display:grid;place-items:center;
+    cursor:pointer;font-size:15px;z-index:30}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap hbar">
+    <div class="brand">
+      <div class="mark">AI</div>
+      <div>AI 旗艦模型競賽<small>FRONTIER MODEL TRACKER</small></div>
+    </div>
+    <nav>
+      <a href="#overview">總覽</a>
+      <a href="#table">對比表</a>
+      <a href="#charts">圖表</a>
+      <a href="#timeline">動態</a>
+    </nav>
+    <div class="stamp"><i class="dot"></i><span id="stamp">載入中…</span></div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <div class="hero">
+    <div class="kicker">十大 AI 實驗室 · 模型與能力</div>
+    <h1>誰的旗艦模型<br><em>真正跑在最前</em></h1>
+    <p class="lede">
+      把最大規模的十間 AI 公司放在同一張表上：旗艦模型、上下文長度、API 定價、模態支援、開源程度，
+      加上獨立第三方智能指數。模型規格為人工核對快照，產業動態每日自動更新。
+    </p>
+    <div class="kpis" id="kpis"></div>
+  </div>
+
+  <section id="overview">
+    <div class="sec-h"><h2>智能指數排行</h2><span id="idxName"></span></div>
+    <p class="sec-p" id="idxNote"></p>
+    <div class="board" id="board"></div>
+  </section>
+
+  <section id="table">
+    <div class="sec-h"><h2>旗艦模型對比表</h2><span>點欄位標題可排序</span></div>
+    <p class="sec-p">以各地區官方 API 文件為準；價格為每百萬 token 標準價（美元），未計促銷與批次折扣。</p>
+    <div class="tools" id="tools"></div>
+    <div class="tbl-scroll">
+      <table id="tbl">
+        <thead>
+          <tr>
+            <th data-k="name">公司 <span class="arw">↕</span></th>
+            <th data-k="flagship">旗艦模型 <span class="arw">↕</span></th>
+            <th data-k="release">發佈 <span class="arw">↕</span></th>
+            <th data-k="context">上下文 <span class="arw">↕</span></th>
+            <th data-k="priceIn">輸入價 <span class="arw">↕</span></th>
+            <th data-k="priceOut">輸出價 <span class="arw">↕</span></th>
+            <th data-k="modality">模態</th>
+            <th data-k="open">開源</th>
+            <th data-k="index">指數 <span class="arw">↕</span></th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <div class="sec-h" style="margin-top:34px"><h2>各家模型陣容</h2><span>旗艦以外的關鍵產品</span></div>
+    <div class="lu" id="lineup"></div>
+  </section>
+
+  <section id="charts">
+    <div class="sec-h"><h2>四個角度看差距</h2><span>同一份資料，換個切法</span></div>
+    <p class="sec-p">上下文與價格是官方公佈值；指數只覆蓋部分模型，空白代表未收錄，不代表能力較弱。</p>
+    <div class="charts">
+      <div class="card"><h3>上下文視窗</h3><p>可一次處理的 token 上限，越長越適合長文件與大型代碼庫</p><div id="ctxChart"></div></div>
+      <div class="card"><h3>API 定價（對數刻度）</h3><p>每百萬 token，美元；藍為輸入、綠為輸出</p><div id="priceChart"></div></div>
+      <div class="card wide"><h3>智能指數 vs 價格</h3><p>越靠左上＝用更少錢換更高分；只有已收錄指數的模型會出現</p><div id="scatter"></div></div>
+    </div>
+  </section>
+
+  <section id="timeline">
+    <div class="sec-h"><h2>發展時間線</h2><span id="tlCount"></span></div>
+    <p class="sec-p">上半部為人工核對的關鍵發佈；下半部為每日自動抓取的新聞標題。</p>
+    <div class="two">
+      <div class="card">
+        <h3>關鍵模型發佈</h3><p>已核實日期的事件</p>
+        <ul class="tl" id="releases"></ul>
+      </div>
+      <div class="card">
+        <h3>每日新聞</h3><p id="newsMeta">讀取中…</p>
+        <ul class="tl" id="news"></ul>
+      </div>
+    </div>
+    <div class="sec-h" style="margin-top:34px"><h2>挑戰者</h2><span>未列入十強但值得留意</span></div>
+    <div class="lu" id="challengers"></div>
+  </section>
+
+  <footer>
+    <div class="fcols">
+      <div>
+        <h5>方法論</h5>
+        <p style="margin:0 0 10px">旗艦模型指各公司目前對外提供、定位最高的通用模型。指數為 Artificial Analysis Intelligence Index v5（9 項評測，2026-10-27 更新），分數越高越好。</p>
+        <p class="warnbox" style="margin:0">不同公司的「旗艦」定義不完全一致：部分公司同時有更貴的頂配版本（例如 Claude Fable 5.1、Muse Wonder Full），表內以官方主推型號為準。</p>
+      </div>
+      <div>
+        <h5>資料來源</h5>
+        <div class="srclist" id="sources"></div>
+      </div>
+      <div>
+        <h5>更新機制</h5>
+        <p style="margin:0 0 8px">新聞由 GitHub Actions 每日定时抓取，寫入 <code>news.json</code>。</p>
+        <p style="margin:0">模型規格為 <span id="snapDate">—</span> 的人工核對快照，需隨新模型發佈更新 <code>data.json</code>。</p>
+      </div>
+    </div>
+  </footer>
+</main>
+
+<button class="toTop" onclick="scrollTo({top:0,behavior:'smooth'})" aria-label="回到頂部">↑</button>
+
+<script>
+(function(){
+  "use strict";
+
+  const COLORS = ["#7cf7c4","#5eb0ff","#a78bfa","#ffcc66","#ff8fa3","#5eead4","#f0abfc","#93c5fd","#fbbf24","#86efac"];
+  const REGION_LABEL = { "美國":"US", "中國":"CN", "歐洲":"EU" };
+  const state = { key:"index", dir:-1, filter:"全部" };
+  let DATA = null, NEWS = null;
+
+  const $ = (s,r=document)=>r.querySelector(s);
+  const mk = (tag,cls,txt)=>{ const e=document.createElement(tag); if(cls)e.className=cls; if(txt!=null)e.textContent=txt; return e; };
+  const SVGNS = "http://www.w3.org/2000/svg";
+  const svgEl = (tag,attrs={})=>{ const e=document.createElementNS(SVGNS,tag); for(const k in attrs) e.setAttribute(k,attrs[k]); return e; };
+
+  const fmtCtx = v => v==null ? "—" : v>=1e6 ? (v/1e6).toFixed(2).replace(/\.?0+$/,"")+"M" : Math.round(v/1000)+"K";
+  const fmtPrice = v => v==null ? "—" : "$"+ (v<1 ? v.toFixed(2) : v.toFixed(v%1?2:0));
+  const colorOf = i => COLORS[i % COLORS.length];
+
+  function initials(name){
+    const map = { "openai":"O","google":"G","anthropic":"A","meta":"M","xai":"X","microsoft":"MS","amazon":"A","alibaba":"Q","deepseek":"D","mistral":"MI" };
+    return map[name] || name.slice(0,2).toUpperCase();
+  }
+
+  /* ---------- header stamp ---------- */
+  function paintStamp(){
+    const s = DATA.snapshot.split("-").join(".");
+    const n = NEWS && NEWS.generated ? new Date(NEWS.generated) : null;
+    const nf = n ? n.toLocaleString("zh-HK",{timeZone:"Asia/Hong_Kong",month:"2-digit",day:"2-digit",hour:"2-digit",minute:"2-digit"}) : null;
+    $("#stamp").textContent = nf ? `規格 ${s} · 新聞 ${nf}` : `規格快照 ${s}`;
+    $("#snapDate").textContent = s;
+  }
+
+  /* ---------- KPIs ---------- */
+  function paintKpis(){
+    const cs = DATA.companies;
+    const scored = cs.filter(c=>c.index!=null).sort((a,b)=>b.index-a.index);
+    const top = scored[0];
+    const longest = cs.filter(c=>c.context).sort((a,b)=>b.context-a.context)[0];
+    const cheapest = cs.filter(c=>c.priceIn!=null).sort((a,b)=>a.priceIn-b.priceIn)[0];
+    const openCount = cs.filter(c=>c.open).length;
+
+    const items = [
+      { k:"指數榜首", v: top ? top.flagship : "—", s: top ? `${top.index} 分 · ${top.name}` : "" },
+      { k:"最長上下文", v: fmtCtx(longest.context), s: longest.name + " · " + longest.flagship },
+      { k:"最低輸入價", v: fmtPrice(cheapest.priceIn), s: `${cheapest.name} · 每百萬 token` },
+      { k:"開放權重", v: openCount + " / " + cs.length, s: "十強中有開源模型的實驗室" }
+    ];
+    const box = $("#kpis"); box.innerHTML="";
+    items.forEach(it=>{
+      const d = mk("div","kpi");
+      d.appendChild(mk("div","k",it.k));
+      d.appendChild(mk("div","v",it.v));
+      d.appendChild(mk("div","s",it.s));
+      box.appendChild(d);
+    });
+  }
+
+  /* ---------- board ---------- */
+  function paintBoard(){
+    $("#idxName").textContent = DATA.indexName;
+    const scored = DATA.companies.filter(c=>c.index!=null).sort((a,b)=>b.index-a.index);
+    const missing = DATA.companies.filter(c=>c.index==null).map(c=>c.name);
+    $("#idxNote").textContent = `已收錄 ${scored.length} 間公司；${missing.join("、")} 尚未收錄於 v5 指數。分數為各模型最高推理設定。`;
+    const max = Math.max(...scored.map(c=>c.index));
+    const box = $("#board"); box.innerHTML="";
+    scored.forEach((c,i)=>{
+      const row = mk("div","row");
+      const rl = mk("div","rl");
+      const dot = mk("span"); dot.style.cssText=`width:7px;height:7px;border-radius:50%;background:${colorOf(i)};flex:none`;
+      rl.appendChild(dot);
+      const t = mk("span",null,c.name); rl.appendChild(t);
+      if(c.region==="中國") rl.appendChild(mk("span","chip cn","CN"));
+      const track = mk("div","track");
+      const fill = mk("div","fill");
+      fill.style.width = Math.max(4,(c.index/max)*100)+"%";
+      fill.style.background = `linear-gradient(90deg,${colorOf(i)}55,${colorOf(i)})`;
+      track.appendChild(fill);
+      const rv = mk("div","rv", String(c.index));
+      row.append(rl,track,rv);
+      row.title = `${c.indexModel}`;
+      box.appendChild(row);
+    });
+  }
+
+  /* ---------- table ---------- */
+  function rows(){
+    let list = DATA.companies.slice();
+    if(state.filter!=="全部") list = list.filter(c=>c.region===state.filter);
+    const k = state.key, dir = state.dir;
+    list.sort((a,b)=>{
+      let x=a[k], y=b[k];
+      if(k==="open"){ x=a.open?1:0; y=b.open?1:0; }
+      if(x==null && y==null) return 0;
+      if(x==null) return 1;
+      if(y==null) return -1;
+      if(typeof x==="string") return dir*x.localeCompare(y,"zh-Hant");
+      return dir*(x-y);
+    });
+    return list;
+  }
+
+  function paintTable(){
+    const tb = $("#tbl tbody"); tb.innerHTML="";
+    const maxIdx = Math.max(...DATA.companies.map(c=>c.index||0));
+    rows().forEach((c,i)=>{
+      const tr = mk("tr");
+
+      const td1 = mk("td");
+      const co = mk("div","co");
+      const mo = mk("div","mono", initials(c.id));
+      mo.style.background = colorOf(DATA.companies.indexOf(c));
+      const nm = mk("div");
+      nm.appendChild(mk("b",null,c.name));
+      nm.appendChild(mk("i",null,`${REGION_LABEL[c.region]} · ${c.hq}`));
+      co.append(mo,nm); td1.appendChild(co); tr.appendChild(td1);
+
+      const td2 = mk("td");
+      const mdl = mk("div","mdl", c.flagship);
+      mdl.appendChild(mk("small",null,c.acumen.length>34 ? c.acumen.slice(0,34)+"…" : c.acumen));
+      td2.appendChild(mdl); tr.appendChild(td2);
+
+      tr.appendChild(mk("td","num", c.release));
+
+      const td4 = mk("td","num");
+      td4.appendChild(document.createTextNode(fmtCtx(c.context)));
+      if(c.context){
+        const bm = mk("div","bar-mini");
+        const ii = document.createElement("i");
+        ii.style.width = Math.max(6,(c.context/1050000)*100)+"%";
+        bm.appendChild(ii); td4.appendChild(bm);
+      }
+      tr.appendChild(td4);
+
+      tr.appendChild(mk("td","num", fmtPrice(c.priceIn)));
+      tr.appendChild(mk("td","num", fmtPrice(c.priceOut)));
+      tr.appendChild(mk("td",null,c.modality));
+
+      const td8 = mk("td");
+      td8.appendChild(mk("span", "tag"+(c.open?"":" closed"), c.openNote));
+      tr.appendChild(td8);
+
+      const td9 = mk("td","num");
+      if(c.index==null){ td9.appendChild(mk("span","na","—")); }
+      else {
+        td9.appendChild(document.createTextNode(c.index));
+        const bm = mk("div","bar-mini");
+        const ii = document.createElement("i");
+        ii.style.width = Math.max(8,(c.index/maxIdx)*100)+"%";
+        bm.appendChild(ii); td9.appendChild(bm);
+      }
+      tr.appendChild(td9);
+
+      tb.appendChild(tr);
+    });
+  }
+
+  function paintTools(){
+    const box = $("#tools"); box.innerHTML="";
+    ["全部","美國","中國","歐洲"].forEach(f=>{
+      const b = mk("button","pill"+(state.filter===f?" on":""), f);
+      b.onclick = ()=>{ state.filter=f; paintTools(); paintTable(); };
+      box.appendChild(b);
+    });
+    const hint = mk("span",null, `${rows().length} 間公司`);
+    hint.style.cssText="font-size:12px;color:var(--dim2);margin-left:auto";
+    box.appendChild(hint);
+  }
+
+  function wireSort(){
+    document.querySelectorAll("#tbl thead th[data-k]").forEach(th=>{
+      th.onclick = ()=>{
+        const k = th.dataset.k;
+        if(k==="modality") return;
+        if(state.key===k) state.dir = -state.dir; else { state.key=k; state.dir = (k==="name")?1:-1; }
+        document.querySelectorAll("#tbl thead th .arw").forEach(a=>a.textContent="↕");
+        const arw = th.querySelector(".arw");
+        if(arw) arw.textContent = state.dir===-1 ? "↓" : "↑";
+        paintTable();
+      };
+    });
+  }
+
+  /* ---------- lineup ---------- */
+  function paintLineup(){
+    const box = $("#lineup"); box.innerHTML="";
+    DATA.companies.forEach((c,i)=>{
+      const card = mk("div","card");
+      card.style.borderTop = `2px solid ${colorOf(i)}`;
+      card.appendChild(mk("h4",null,c.name));
+      const ac = mk("div","ac", c.acumen); card.appendChild(ac);
+      const ul = mk("ul");
+      c.lineup.forEach(l=>{
+        const li = mk("li");
+        li.appendChild(mk("b",null,l.name+"："));
+        li.appendChild(document.createTextNode(l.note));
+        ul.appendChild(li);
+      });
+      card.appendChild(ul);
+      const a = mk("a",null,"官方文件 ↗");
+      a.href = c.source; a.target="_blank"; a.rel="noopener";
+      a.style.cssText="font-size:11.5px;display:inline-block;margin-top:9px";
+      card.appendChild(a);
+      box.appendChild(card);
+    });
+    const cb = $("#challengers"); cb.innerHTML="";
+    (DATA.challengers||[]).forEach(ch=>{
+      const card = mk("div","card");
+      card.appendChild(mk("h4",null,ch.name));
+      card.appendChild(mk("div","ac",ch.org));
+      const nt = mk("div",null,ch.note);
+      nt.style.cssText = "font-size:12px;color:var(--dim)";
+      card.appendChild(nt);
+      cb.appendChild(card);
+    });
+  }
+
+  /* ---------- charts ---------- */
+  function chartFrame(w,h,padL,padR,padT,padB){
+    const svg = svgEl("svg",{viewBox:`0 0 ${w} ${h}`,role:"img"});
+    return { svg, w, h, x0:padL, x1:w-padR, y0:padT, y1:h-padB };
+  }
+
+  function ctxChart(){
+    const cs = DATA.companies.filter(c=>c.context).sort((a,b)=>b.context-a.context);
+    const rowH = 30, w = 520, h = cs.length*rowH + 26;
+    const f = chartFrame(w,h,98,64,8,18);
+    const max = Math.max(...cs.map(c=>c.context));
+    cs.forEach((c,i)=>{
+      const y = f.y0 + i*rowH;
+      f.svg.appendChild(svgEl("text",{x:96,y:y+15,"text-anchor":"end",class:"lbl"})).textContent = c.name;
+      f.svg.appendChild(svgEl("rect",{x:f.x0,y:y+3,width:f.x1-f.x0,height:14,rx:7,fill:"#1a2438"}));
+      const bw = Math.max(6,(c.context/max)*(f.x1-f.x0-6));
+      const r = svgEl("rect",{x:f.x0,y:y+3,width:bw,height:14,rx:7,fill:colorOf(DATA.companies.indexOf(c))});
+      r.style.opacity=".85"; f.svg.appendChild(r);
+      const t = svgEl("text",{x:f.x0+bw+8,y:y+14,class:"val"});
+      t.textContent = fmtCtx(c.context); f.svg.appendChild(t);
+    });
+    $("#ctxChart").appendChild(f.svg);
+  }
+
+  function priceChart(){
+    const cs = DATA.companies.filter(c=>c.priceIn!=null||c.priceOut!=null);
+    const rowH = 38, w = 520, h = cs.length*rowH + 34;
+    const f = chartFrame(w,h,98,18,10,24);
+    const lo = Math.log10(0.05), hi = Math.log10(100);
+    const X = v => f.x0 + ((Math.log10(Math.max(v,0.05))-lo)/(hi-lo))*(f.x1-f.x0);
+    [0.1,1,10,100].forEach(t=>{
+      const x = X(t);
+      f.svg.appendChild(svgEl("line",{x1:x,y1:f.y0,x2:x,y2:f.y1,class:"grid-l"}));
+      const tx = svgEl("text",{x:x,y:f.y1+15,"text-anchor":"middle",class:"ax"});
+      tx.textContent = "$"+t; f.svg.appendChild(tx);
+    });
+    cs.forEach((c,i)=>{
+      const y = f.y0 + i*rowH;
+      f.svg.appendChild(svgEl("text",{x:96,y:y+17,"text-anchor":"end",class:"lbl"})).textContent = c.name;
+      [["priceIn","#5eb0ff",0],["priceOut","#7cf7c4",16]].forEach(([k,col,off])=>{
+        const v = c[k]; if(v==null) return;
+        f.svg.appendChild(svgEl("rect",{x:f.x0,y:y+off*0.55,width:Math.max(2,X(v)-f.x0),height:11,rx:5,fill:col,opacity:.9}));
+      });
+    });
+    const lg = svgEl("g",{});
+    [["輸入","#5eb0ff"],["輸出","#7cf7c4"]].forEach(([n,col],i)=>{
+      const gx = f.x0 + i*64;
+      lg.appendChild(svgEl("rect",{x:gx,y:2,width:9,height:9,rx:2,fill:col}));
+      const t = svgEl("text",{x:gx+14,y:10,class:"ax"}); t.textContent=n; lg.appendChild(t);
+    });
+    f.svg.appendChild(lg);
+    $("#priceChart").appendChild(f.svg);
+  }
+
+  function scatter(){
+    const cs = DATA.companies.filter(c=>c.index!=null && c.priceOut!=null);
+    const w = 760, h = 300;
+    const f = chartFrame(w,h,52,22,16,36);
+    const xs = cs.map(c=>c.priceOut), ys = cs.map(c=>c.index);
+    const xmin = Math.log10(Math.min(...xs)*0.6), xmax = Math.log10(Math.max(...xs)*1.6);
+    const ymin = Math.max(0,Math.min(...ys)-8), ymax = Math.max(...ys)+6;
+    const X = v => f.x0 + ((Math.log10(v)-xmin)/(xmax-xmin))*(f.x1-f.x0);
+    const Y = v => f.y1 - ((v-ymin)/(ymax-ymin))*(f.y1-f.y0);
+
+    for(let g=ymin; g<=ymax; g+=Math.ceil((ymax-ymin)/4)){
+      f.svg.appendChild(svgEl("line",{x1:f.x0,y1:Y(g),x2:f.x1,y2:Y(g),class:"grid-l"}));
+      const t = svgEl("text",{x:f.x0-8,y:Y(g)+4,"text-anchor":"end",class:"ax"});
+      t.textContent = Math.round(g); f.svg.appendChild(t);
+    }
+    [1,2,5,10,20,50].filter(v=>Math.log10(v)>=xmin&&Math.log10(v)<=xmax).forEach(v=>{
+      const t = svgEl("text",{x:X(v),y:f.y1+16,"text-anchor":"middle",class:"ax"});
+      t.textContent = "$"+v; f.svg.appendChild(t);
+    });
+    const axl = svgEl("text",{x:f.x1,y:f.y1+30,"text-anchor":"end",class:"ax"});
+    axl.textContent="輸出價（每百萬 token）"; f.svg.appendChild(axl);
+
+    const placed = [];
+    cs.slice().sort((a,b)=>b.index-a.index).forEach((c)=>{
+      const cx = X(c.priceOut), cy = Y(c.index);
+      const col = colorOf(DATA.companies.indexOf(c));
+      f.svg.appendChild(svgEl("circle",{cx,cy,r:7,fill:col,opacity:.9}));
+      f.svg.appendChild(svgEl("circle",{cx,cy,r:13,fill:"none",stroke:col,opacity:.25}));
+      // avoid label collisions when two models share a price point
+      let dy = 4;
+      for(const off of [4,-10,18,-24,32]){
+        const clash = placed.some(p=>Math.abs(p.x-(cx+14))<96 && Math.abs(p.y-(cy+off))<15);
+        if(!clash){ dy=off; break; }
+      }
+      placed.push({x:cx+14,y:cy+dy});
+      const t = svgEl("text",{x:cx+14,y:cy+dy,class:"lbl"});
+      t.textContent = c.name.replace("（Qwen）","").replace(" DeepMind",""); f.svg.appendChild(t);
+      const v = svgEl("text",{x:cx+14,y:cy+dy+13,class:"ax"});
+      v.textContent = c.index+" 分 · "+fmtPrice(c.priceOut)+"/M 輸出"; f.svg.appendChild(v);
+    });
+    $("#scatter").appendChild(f.svg);
+  }
+
+  /* ---------- timeline ---------- */
+  function paintTimeline(){
+    $("#tlCount").textContent = `${(DATA.releases||[]).length} 件已核實事件`;
+    const ul = $("#releases"); ul.innerHTML="";
+    (DATA.releases||[]).slice().sort((a,b)=>b.date.localeCompare(a.date)).forEach(r=>{
+      const li = mk("li");
+      li.appendChild(mk("div","d", r.date.replace(/-/g,".")));
+      li.appendChild(mk("div","t", r.title));
+      li.appendChild(mk("div","o", r.org));
+      const a = mk("a",null,"來源 ↗"); a.href=r.source; a.target="_blank"; a.rel="noopener";
+      li.appendChild(a);
+      ul.appendChild(li);
+    });
+
+    if(!NEWS){ $("#newsMeta").textContent = "尚未連接 news.json（部署後由每日任務產出）"; return; }
+    $("#newsMeta").textContent = `自動抓取 · 最近更新 ${new Date(NEWS.generated).toLocaleString("zh-HK",{timeZone:"Asia/Hong_Kong"})}`;
+    const nl = $("#news"); nl.innerHTML="";
+    (NEWS.items||[]).slice(0,12).forEach(n=>{
+      const li = mk("li");
+      li.appendChild(mk("div","d", (n.date||"").replace(/-/g,".")));
+      li.appendChild(mk("div","t", n.title));
+      const meta = mk("div","o", n.company + (n.source ? " · "+n.source : ""));
+      li.appendChild(meta);
+      if(n.url){
+        const a = mk("a",null,"原文 ↗"); a.href=n.url; a.target="_blank"; a.rel="noopener";
+        li.appendChild(a);
+      }
+      nl.appendChild(li);
+    });
+  }
+
+  function paintSources(){
+    const box = $("#sources"); box.innerHTML="";
+    (DATA.sources||[]).forEach(s=>{
+      const a = mk("a",null,s.label); a.href=s.url; a.target="_blank"; a.rel="noopener";
+      box.appendChild(a);
+    });
+  }
+
+  /* ---------- boot ---------- */
+  Promise.all([
+    fetch("data.json",{cache:"no-store"}).then(r=>r.json()),
+    fetch("news.json",{cache:"no-store"}).then(r=>r.ok?r.json():null).catch(()=>null)
+  ]).then(([d,n])=>{
+    DATA = d; NEWS = n;
+    paintStamp(); paintKpis(); paintBoard(); paintTools(); paintTable(); wireSort();
+    paintLineup(); paintSources();
+    ctxChart(); priceChart(); scatter(); paintTimeline();
+  }).catch(err=>{
+    document.querySelector("main").innerHTML =
+      '<p style="padding:60px 0;color:#ff7a8a">資料載入失敗：'+(err&&err.message||err)+
+      '<br><small style="color:#8d9bb5">請確認 data.json 與 index.html 在同一個目錄，並以 http(s) 開啟（file:// 會被瀏覽器阻擋）。</small></p>';
+  });
+})();
+</script>
+</body>
+</html>
