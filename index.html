@@ -354,25 +354,35 @@
   function paintBoard(){
     $("#idxName").textContent = DATA.indexName;
     const scored = DATA.companies.filter(c=>c.index!=null).sort((a,b)=>b.index-a.index);
-    const missing = DATA.companies.filter(c=>c.index==null).map(c=>c.name);
-    $("#idxNote").textContent = `已收錄 ${scored.length} 間公司；${missing.join("、")} 尚未收錄於 v5 指數。分數為各模型最高推理設定。`;
-    const max = Math.max(...scored.map(c=>c.index));
+    const missing = DATA.companies.filter(c=>c.index==null).map(c=>c.name.replace("（Qwen）",""));
+    $("#idxNote").textContent =
+      `已收錄 ${scored.length} 間公司；${missing.join("、")} 在 v5 指數中暫無公開分數，以「—」表示 —— 未收錄不等於能力較弱。分數取各模型最高推理設定。`;
+    const max = Math.max(...scored.map(c=>c.index),1);
+    const all = scored.concat(DATA.companies.filter(c=>c.index==null));
     const box = $("#board"); box.innerHTML="";
-    scored.forEach((c,i)=>{
+    all.forEach((c)=>{
+      const i = DATA.companies.indexOf(c);
       const row = mk("div","row");
+      if(c.index==null) row.style.opacity=".55";
       const rl = mk("div","rl");
-      const dot = mk("span"); dot.style.cssText=`width:7px;height:7px;border-radius:50%;background:${colorOf(i)};flex:none`;
+      const dot = mk("span"); dot.style.cssText=`width:7px;height:7px;border-radius:50%;background:${c.index==null?"#3b465e":colorOf(i)};flex:none`;
       rl.appendChild(dot);
-      const t = mk("span",null,c.name); rl.appendChild(t);
+      rl.appendChild(mk("span",null,c.name));
       if(c.region==="中國") rl.appendChild(mk("span","chip cn","CN"));
       const track = mk("div","track");
-      const fill = mk("div","fill");
-      fill.style.width = Math.max(4,(c.index/max)*100)+"%";
-      fill.style.background = `linear-gradient(90deg,${colorOf(i)}55,${colorOf(i)})`;
-      track.appendChild(fill);
-      const rv = mk("div","rv", String(c.index));
+      if(c.index==null){
+        track.style.background = "transparent";
+        track.style.border = "1px dashed #2a3549";
+      } else {
+        const fill = mk("div","fill");
+        fill.style.width = Math.max(4,(c.index/max)*100)+"%";
+        fill.style.background = `linear-gradient(90deg,${colorOf(i)}55,${colorOf(i)})`;
+        track.appendChild(fill);
+      }
+      const rv = mk("div","rv", c.index==null ? "—" : String(c.index));
+      if(c.index==null) rv.classList.add("na");
       row.append(rl,track,rv);
-      row.title = `${c.indexModel}`;
+      row.title = c.indexModel || `${c.flagship}：未收錄於 v5 指數`;
       box.appendChild(row);
     });
   }
